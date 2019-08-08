@@ -8,10 +8,12 @@ namespace E_Food.Models.ViewModels
 {
     public class TipoAB
     {
+        [Display(Name ="ID Tipo AB")]
         public int idTipoAB { get; set; }
         [Required]
         [StringLength(25)]
         [Display(Name ="Nombre")]
         public string Nombre { get; set; } 
+  
     }
 }
