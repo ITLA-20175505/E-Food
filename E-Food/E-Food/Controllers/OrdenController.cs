@@ -12,17 +12,8 @@ namespace E_Food.Controllers
         // GET: Orden
         public ActionResult Index()
         {
-            List<Detalle_Orden> listaDetalleOrden;
-            using (EFood bd = new EFood())
-            {
-                listaDetalleOrden = (from d in bd.TipoABs
-                               select new ListaTabla
-                               {
-                                   idTipoAB = d.idTipo,
-                                   Nombre = d.Nombre
-                               }).ToList();
-            }
-            return View(listaTipoAB);
+        
+            return View();
         }
     }
 }
