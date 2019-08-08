@@ -14,13 +14,13 @@ namespace E_Food.Controllers
         public ActionResult Index()
         {
             List<ListaTabla> listaTipoAB;
-            using(EFoodEntities bd = new EFoodEntities())
+            using(EFood bd = new EFood())
             {
                listaTipoAB = (from d in bd.TipoABs
                                 select new ListaTabla
                                 {
                                     idTipoAB = d.idTipo,
-                                    Nombre = d.nombreAB
+                                    Nombre = d.Nombre
                                 }).ToList();
             }
             return View(listaTipoAB);
@@ -36,10 +36,10 @@ namespace E_Food.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using(EFoodEntities bd = new EFoodEntities())
+                    using(EFood bd = new EFood())
                     {
                         var tabla = new TipoAB();
-                        tabla.nombreAB = model.Nombre;
+                        tabla.Nombre = model.Nombre;
 
                         bd.TipoABs.Add(tabla);
                         bd.SaveChanges();
