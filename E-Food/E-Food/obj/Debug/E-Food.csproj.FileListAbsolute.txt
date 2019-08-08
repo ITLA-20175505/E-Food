@@ -74,3 +74,10 @@ C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\obj\Debug\E-Food.csproj.CoreCompileI
 C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\obj\Debug\E-Food.csproj.CopyComplete
 C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\obj\Debug\E-Food.dll
 C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\obj\Debug\E-Food.pdb
+C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\bin\DotLiquid.dll
+C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\bin\EntityFramework.dll
+C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\bin\EntityFramework.SqlServer.dll
+C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\bin\DotLiquid.xml
+C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\bin\EntityFramework.xml
+C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\bin\EntityFramework.SqlServer.xml
+C:\Users\fredd\Desktop\E-Food\E-Food\E-Food\bin\it\DotLiquid.resources.dll

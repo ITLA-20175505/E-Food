@@ -13,7 +13,7 @@ namespace E_Food.Models
         {
             cmd = new SqlCommand("CrearTipoAB", Conexion.getConnection());
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@Nombre", tipoAB.nombre));
+            //cmd.Parameters.Add(new SqlParameter("@Nombre", tipoAB.nombre));
             int i = cmd.ExecuteNonQuery();
             return i;
         }
