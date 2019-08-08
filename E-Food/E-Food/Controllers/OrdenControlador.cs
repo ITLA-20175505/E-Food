@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Firebase.Database;
-using Firebase.Database.Query;
-using System.Threading.Tasks;
+using E_Food.Models;
+using E_Food.Models.ViewModels;
 
 namespace E_Food.Controllers
 {
-    public class Controlador : Controller
+    public class OrdenControlador : Controller
     {
-        // GET: Controlador
+        // GET: Orden
         public ActionResult Index()
         {
-            return View();
+  
+                       return View();
         }
-
-
+       
+        }
     }
-}
