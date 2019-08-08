@@ -15,10 +15,10 @@ namespace E_Food.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class EFoodEntities : DbContext
+    public partial class EFood : DbContext
     {
-        public EFoodEntities()
-            : base("name=EFoodEntities")
+        public EFood()
+            : base("name=EFood")
         {
         }
     
@@ -172,7 +172,7 @@ namespace E_Food.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("crearMesa", nombreParameter);
         }
     
-        public virtual int crearOrden(Nullable<int> idMesa, string descripcion, Nullable<System.TimeSpan> fecha)
+        public virtual int crearOrden(Nullable<int> idMesa, string descripcion, Nullable<System.DateTime> fecha)
         {
             var idMesaParameter = idMesa.HasValue ?
                 new ObjectParameter("idMesa", idMesa) :
@@ -184,7 +184,7 @@ namespace E_Food.Models
     
             var fechaParameter = fecha.HasValue ?
                 new ObjectParameter("fecha", fecha) :
-                new ObjectParameter("fecha", typeof(System.TimeSpan));
+                new ObjectParameter("fecha", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("crearOrden", idMesaParameter, descripcionParameter, fechaParameter);
         }
@@ -360,11 +360,6 @@ namespace E_Food.Models
                 new ObjectParameter("nombre", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editarTipoServicio", idTipoServicioParameter, idTipoABParameter, nombreParameter);
-        }
-    
-        public virtual ObjectResult<verDetalleOrden_Result> verDetalleOrden()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<verDetalleOrden_Result>("verDetalleOrden");
         }
     
         public virtual ObjectResult<verMesa_Result> verMesa()

@@ -22,7 +22,7 @@ namespace E_Food.Models
         }
     
         public int idTipo { get; set; }
-        public string nombreAB { get; set; }
+        public string Nombre { get; set; }
         public Nullable<bool> inactive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

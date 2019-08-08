@@ -14,7 +14,7 @@ namespace E_Food.Models
     public partial class verTipoAB_Result
     {
         public int idTipo { get; set; }
-        public string nombreAB { get; set; }
+        public string Nombre { get; set; }
         public Nullable<bool> inactive { get; set; }
     }
 }

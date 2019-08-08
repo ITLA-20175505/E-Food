@@ -16,8 +16,8 @@ namespace E_Food.Models
     {
         public int idOrden { get; set; }
         public int idMesa { get; set; }
-        public string descripcion { get; set; }
-        public Nullable<System.DateTime> fecha { get; set; }
+        public string Descripcion { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
         public Nullable<bool> inactive { get; set; }
     
         public virtual Mesa Mesa { get; set; }
