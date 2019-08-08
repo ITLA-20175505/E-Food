@@ -1,4 +1,3 @@
-
 create database EMEnu
 use EMEnu
 
