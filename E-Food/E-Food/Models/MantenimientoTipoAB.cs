@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -7,12 +8,14 @@ namespace E_Food.Models
 {
     public class MantenimientoTipoAB
     {
-        SqlCommand cmd = new SqlCommand(
-        "Ten Most Expensive Products", Conexion.getConnection());
-
-        // 2. set the command object so it knows
-        // to execute a stored procedure
-        cmd.CommandType = CommandType.StoredProcedure;
-        
+        private SqlCommand cmd;
+        public int crearTipoAB(TipoAB tipoAB)
+        {
+            cmd = new SqlCommand("CrearTipoAB", Conexion.getConnection());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@Nombre", tipoAB.nombre));
+            int i = cmd.ExecuteNonQuery();
+            return i;
+        }
     }
 }
