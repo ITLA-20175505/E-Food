@@ -259,8 +259,11 @@
     <Compile Include="Models\verTipoServicio_Result.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\DetalleOrden.cs" />
     <Compile Include="Models\ViewModels\Orden.cs" />
+    <Compile Include="Models\ViewModels\Servicio.cs" />
     <Compile Include="Models\ViewModels\TipoAB.cs" />
+    <Compile Include="Models\ViewModels\TipoServicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

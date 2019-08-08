@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_Food.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,17 @@ namespace E_Food.Controllers
         // GET: Orden
         public ActionResult Index()
         {
-            return View();
+            List<Detalle_Orden> listaDetalleOrden;
+            using (EFood bd = new EFood())
+            {
+                listaDetalleOrden = (from d in bd.TipoABs
+                               select new ListaTabla
+                               {
+                                   idTipoAB = d.idTipo,
+                                   Nombre = d.Nombre
+                               }).ToList();
+            }
+            return View(listaTipoAB);
         }
     }
 }
