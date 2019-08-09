@@ -445,5 +445,23 @@ namespace E_Food.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<verTipoServicio_Result>("verTipoServicio");
         }
+    
+        public virtual ObjectResult<Servicio> filtroServicio(Nullable<int> idTipoAB)
+        {
+            var idTipoABParameter = idTipoAB.HasValue ?
+                new ObjectParameter("idTipoAB", idTipoAB) :
+                new ObjectParameter("idTipoAB", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Servicio>("filtroServicio", idTipoABParameter);
+        }
+    
+        public virtual ObjectResult<Servicio> filtroServicio(Nullable<int> idTipoAB, MergeOption mergeOption)
+        {
+            var idTipoABParameter = idTipoAB.HasValue ?
+                new ObjectParameter("idTipoAB", idTipoAB) :
+                new ObjectParameter("idTipoAB", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Servicio>("filtroServicio", mergeOption, idTipoABParameter);
+        }
     }
 }

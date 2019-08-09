@@ -228,6 +228,9 @@
     <Compile Include="Models\Detalle_Orden.cs">
       <DependentUpon>BD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\filtroServicio_Result.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LoginData.cs" />
     <Compile Include="Models\MantenimientoTipoAB.cs" />
     <Compile Include="Models\Mesa.cs">
@@ -289,7 +292,9 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Orden\AgregarDetalle.cshtml" />
-    <Content Include="Views\Servicio\ListaProductos.cshtml" />
+    <Content Include="Views\Servicio\Entradas.cshtml" />
+    <Content Include="Views\Servicio\CrearServicio.cshtml" />
+    <Content Include="Views\Orden\editarDetalle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

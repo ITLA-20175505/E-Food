@@ -362,37 +362,46 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
+                @{
+int total = 0;
+                }
                 <tbody>
                     @if (Session["detalleOrden"] != null)
                     {
-                    foreach (var item in Session["detalleOrden"] as List<E_Food.Models.ViewModels.ViewDetalleOrden>)
 
-                    {
-                        <tr>
-                            <td>
-                                <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
-                                     alt="" class="img-menu">
-                            </td>
-                            <td> @Html.DisplayFor(modelItem => item.servicio.nombreServicio)</td>
-                            <td> @Html.DisplayFor(modelItem => item.servicio.tiempo)</td>
-                            <td>@Html.DisplayFor(modelItem => item.servicio.precio)</td>
-                            <td>@Html.ActionLink("Eliminar","borrarDetalle","Orden",new { idServicio = item.servicio.idServicio },null)
+                        foreach (var item in Session["detalleOrden"] as List<E_Food.Models.ViewModels.ViewDetalleOrden>)
 
-
-                            </td>
-                        </tr>
+                        {
+                            total = total + (item.Cantidad * (int)item.servicio.precio);
+                            <tr>
+                                <td>
+                                    <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
+                                         alt="" class="img-menu">
+                                </td>
+                                <td> @Html.DisplayFor(modelItem => item.servicio.nombreServicio)</td>
+                                <td> @Html.DisplayFor(modelItem => item.Cantidad)</td>
+                                <td>@Html.DisplayFor(modelItem => item.servicio.precio)</td>
+                                <td>@(item.servicio.precio * item.Cantidad)</td>
+                                <td>
+                                    @Html.ActionLink("Eliminar", "borrarDetalle", "Orden", new { idServicio = item.servicio.idServicio }, null)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "editarDetalle", "Orden", new { idServicio = item.servicio.idServicio, cantidad = 5 }, null)
+                                </td>
+                            </tr>
+                        }
                     }
-                    }
-                        <tr>
-                            <td class="col-md-9" style="text-align: right !important;
+                    <tr>
+                        <td class="col-md-9" style="text-align: right !important;
                         color: #fff;
                         background-color: #212529;
                         border-color: #32383e;" colspan="3">
-                                Total.:
-                            </td>
-                            <td class="col-md-3" style="text-align: left !important;" colspan="2">DOP $500 </td>
-                        </tr>
-                    </tbody>
+                            Total.:
+                        </td>
+                        <td class="col-md-3" style="text-align: left !important;" colspan="2">DOP $@total  </td>
+                    </tr>
+
+                </tbody>
             </table>
             <div class="centrar">
                 <button type="button" class="btn btn-success">Procesar</button>

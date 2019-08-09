@@ -279,6 +279,9 @@
     <FunctionImport Name="verServicio" ReturnType="Collection(EFoodModel.verServicio_Result)" />
     <FunctionImport Name="verTipoAB" ReturnType="Collection(EFoodModel.verTipoAB_Result)" />
     <FunctionImport Name="verTipoServicio" ReturnType="Collection(EFoodModel.verTipoServicio_Result)" />
+    <FunctionImport Name="filtroServicio" EntitySet="Servicios" ReturnType="Collection(EFoodModel.Servicio)">
+      <Parameter Name="idTipoAB" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="buscarDetalleOrden_Result">
     <Property Type="Int32" Name="idOrden" Nullable="false" />
@@ -363,5 +366,16 @@
     <Property Type="String" Name="nombreAB" Nullable="false" MaxLength="25" />
     <Property Type="Int32" Name="idTipoServicio" Nullable="false" />
     <Property Type="String" Name="nombreTS" Nullable="false" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="filtroServicio_Result">
+    <Property Type="Int32" Name="idServicio" Nullable="false" />
+    <Property Type="Int32" Name="idTipoAB" Nullable="false" />
+    <Property Type="String" Name="nombreAB" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="idTipoServicio" Nullable="false" />
+    <Property Type="String" Name="nombreTS" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="nombreServicio" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="precio" Nullable="true" />
+    <Property Type="Int32" Name="tiempo" Nullable="true" />
+    <Property Type="String" Name="imagen" Nullable="true" MaxLength="Max" />
   </ComplexType>
 </Schema>

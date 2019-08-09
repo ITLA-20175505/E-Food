@@ -17,9 +17,7 @@ namespace E_Food.Controllers
         private EFood bd = new EFood();
         public ActionResult Index()
         {
-            listaServicio = new List<Servicio>();
-            listaServicio = bd.Servicios.ToList();
-            return View(listaServicio);
+            return View();
         }
             public ActionResult AgregarDetalle(int idServicio, int cantidad, int idOrden)
             {
@@ -79,6 +77,20 @@ namespace E_Food.Controllers
                 detalle.RemoveAt(getIndex(idServicio));
                 return View("AgregarDetalle");
             }
+        public ActionResult editarDetalle(int idServicio,int cantidad)
+        {
+            ViewDetalleOrden detallito = new ViewDetalleOrden();
+            detalle = (List<ViewDetalleOrden>)Session["detalleOrden"];
+            detallito = detalle[getIndex(idServicio)];
+            return View(detallito);
+        }
+        [HttpPost]
+        public ActionResult editarDetalle(ViewDetalleOrden detallito)
+        {
+            detalle = (List<ViewDetalleOrden>)Session["detalleOrden"];
+            detalle[getIndex(detallito.servicio.idServicio)].Cantidad = detallito.Cantidad;
+            return View("AgregarDetalle");
+        }
         }
 
     }
