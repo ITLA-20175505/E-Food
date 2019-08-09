@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Entrada</title>
+    <title>Mariscos</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
@@ -73,8 +73,8 @@
         }
 
         /* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
+            SIDEBAR STYLE
+        ----------------------------------------------------- */
 
         .wrapper {
             display: flex;
@@ -92,31 +92,31 @@
             transform-origin: bottom left;
         }
 
-        #sidebar.active {
-            margin-left: -250px;
-            transform: rotateY(100deg);
-        }
+            #sidebar.active {
+                margin-left: -250px;
+                transform: rotateY(100deg);
+            }
 
             #sidebar .sidebar-header {
                 padding: 20px;
                 background: #414141;
             }
 
-        #sidebar ul p {
-            color: #fff;
-            padding: 10px;
-        }
+            #sidebar ul p {
+                color: #fff;
+                padding: 10px;
+            }
 
-        #sidebar ul li a {
-            padding: 10px;
-            font-size: 1.1em;
-            display: block;
-        }
+            #sidebar ul li a {
+                padding: 10px;
+                font-size: 1.1em;
+                display: block;
+            }
 
-        #sidebar ul li a:hover {
-            color: #7386D5;
-            background: #fff;
-        }
+                #sidebar ul li a:hover {
+                    color: #7386D5;
+                    background: #fff;
+                }
 
             #sidebar ul li.active > a,
             a[aria-expanded="true"] {
@@ -147,13 +147,13 @@
             padding: 20px;
         }
 
-        ul.CTAs a {
-            text-align: center;
-            font-size: 0.9em !important;
-            display: block;
-            border-radius: 5px;
-            margin-bottom: 5px;
-        }
+            ul.CTAs a {
+                text-align: center;
+                font-size: 0.9em !important;
+                display: block;
+                border-radius: 5px;
+                margin-bottom: 5px;
+            }
 
         a.download {
             background: #fff;
@@ -183,57 +183,59 @@
             cursor: pointer;
         }
 
-        #sidebarCollapse span {
-            width: 80%;
-            height: 2px;
-            margin: 0 auto;
-            display: block;
-            background: #555;
-            transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
-            transition-delay: 0.2s;
-        }
-
-        #sidebarCollapse span:first-of-type {
-            transform: rotate(45deg) translate(2px, 2px);
-        }
-
-        #sidebarCollapse span:nth-of-type(2) {
-            opacity: 0;
-        }
-
-        #sidebarCollapse span:last-of-type {
-            transform: rotate(-45deg) translate(1px, -1px);
-        }
-
-        #sidebarCollapse.active span {
-            transform: none;
-            opacity: 1;
-            margin: 5px auto;
-        }
-
-        /*MEDIAQUERIES*/
-        media (max-width: 768px) {
-            #sidebar {
-                margin-left: -250px;
-                transform: rotateY(90deg);
+            #sidebarCollapse span {
+                width: 80%;
+                height: 2px;
+                margin: 0 auto;
+                display: block;
+                background: #555;
+                transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+                transition-delay: 0.2s;
             }
 
-            #sidebar.active {
-                margin-left: 0;
-                transform: none;
-            }
+                #sidebarCollapse span:first-of-type {
+                    transform: rotate(45deg) translate(2px, 2px);
+                }
 
-            #sidebarCollapse span:first-of-type,
-            #sidebarCollapse span:nth-of-type(2),
-            #sidebarCollapse span:last-of-type {
+                #sidebarCollapse span:nth-of-type(2) {
+                    opacity: 0;
+                }
+
+                #sidebarCollapse span:last-of-type {
+                    transform: rotate(-45deg) translate(1px, -1px);
+                }
+
+            #sidebarCollapse.active span {
                 transform: none;
                 opacity: 1;
                 margin: 5px auto;
             }
 
-            #sidebarCollapse.active span {
-                margin: 0 auto;
-            }
+        /*MEDIAQUERIES*/
+        media (max-width: 768px) {
+            #sidebar
+
+        {
+            margin-left: -250px;
+            transform: rotateY(90deg);
+        }
+
+        #sidebar.active {
+            margin-left: 0;
+            transform: none;
+        }
+
+        #sidebarCollapse span:first-of-type,
+        #sidebarCollapse span:nth-of-type(2),
+        #sidebarCollapse span:last-of-type {
+            transform: none;
+            opacity: 1;
+            margin: 5px auto;
+        }
+
+        #sidebarCollapse.active span {
+            margin: 0 auto;
+        }
 
             #sidebarCollapse.active span:first-of-type {
                 transform: rotate(45deg) translate(2px, 2px);
@@ -273,7 +275,7 @@
             margin-left: 5px;
         }
 
-        #content>.row {
+        #content > .row {
             width: 100%;
             margin-bottom: 20px;
             display: flex;
@@ -284,15 +286,15 @@
             margin-left: 30px;
         }
 
-        #container>.row>.carta {
+        #container > .row > .carta {
             margin-bottom: 20px;
         }
 
-        .col-md-12>.img-cont {
+        .col-md-12 > .img-cont {
             width: 30px;
         }
 
-        .col-md-12>.label {
+        .col-md-12 > .label {
             font-family: 'Poppins', sans-serif;
             font-size: 1.1em;
             font-weight: 300;
@@ -318,37 +320,36 @@
                 </li>
                 <li>
                     <a href="#homeSubmenu">
-                        @Html.ActionLink("Resumen de Orden","ResumenOrdenes","Orden")
-                 
-                </a>
-            </li>
-            <li>
-                <a href="#homeSubmenu">Entradas</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                   class="dropdown-toggle">Platos Fuertes</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">@Html.ActionLink("Pastas", "Pastas")</a>
-                    </li>
-                    <li>
-                        <a href="#">@Html.ActionLink("Carnes", "Carnes")</a>
-                    </li>
-                    <li>
-                        <a href="#">@Html.ActionLink("Aves", "Aves")</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">@Html.ActionLink("Ensaladas", "Ensaladas")</a>
-            </li>
-            <li>
-                <a href="#">@Html.ActionLink("Bebidas", "Bebidas")</a>
-            </li>
-            <li>
-                <a href="#">@Html.ActionLink("Postres", "Postres")</a>
-            </li>
+                        @Html.ActionLink("Resumen de Orden" +
+                   "" +
+                   "" +
+                   "", "AgregarDetalle", "Orden")
+                    </a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu">Entradas</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                       class="dropdown-toggle">Platos Fuertes</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Pasta</a>
+                        </li>
+                        <li>
+                            <a href="#">Carnes</a>
+                        </li>
+                        <li>
+                            <a href="#">Aves</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Ensalada</a>
+                </li>
+                <li>
+                    <a href="#">Bebida</a>
+                </li>
             </ul>
         </nav>
 
@@ -360,7 +361,7 @@
                     <span></span>
                     <span></span>
                 </button>
-                <h2 class="tit-cen">Entrada</h2>
+                <h2 class="tit-cen">Mariscos</h2>
                 <form name="myform" action="Index.html" method="POST">
                     <input type="submit" value="Realizar Pedido" class="btn btn-info">
                 </form>
@@ -370,32 +371,29 @@
                 <div class="row">
                     @foreach (var item in Model)
                     {
-                        int cantidad = 0;
-                <div class="col-lg-4 carta">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h2>@Html.DisplayFor(modelItem => item.nombreServicio)</h2>
-                        </div>
-                        <div class="panel-body">
-                            <img src="@Html.DisplayFor(modelItem => item.imagen)"
-                                 alt="" class="img-thumbnail">
-                            <p>@Html.DisplayFor(modelItem => item.idServicio)</p>
-                            <p>@Html.DisplayFor(modelItem => item.precio)</p>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <button class="img-cont" type="button" class="btn btn-danger">-</button>
-                                    <label for="" style="margin: 0px 10px;" class="label">0</label>
-                                   
-                                    <button type="submit" class="img-cont" type="button" class="btn btn-danger" onclick="getNumber()">
-                                        @Html.ActionLink("+", "AgregarDetalle", "Orden", new { idServicio = item.idServicio, cantidad = 1, idorden = 1 }, null)
-                                    </button>
+                        <div class="col-lg-4 carta">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h2>@Html.DisplayFor(modelItem => item.nombreServicio)</h2>
+                                </div>
+                                <div class="panel-body">
+                                    <img src=@Html.DisplayFor(modelItem => item.imagen)
+                                         alt="" class="img-thumbnail">
+                                    <p>@Html.DisplayFor(modelItem => item.idServicio)</p>
+                                    <p>@Html.DisplayFor(modelItem => item.precio)</p>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button class="img-cont" type="button" class="btn btn-danger">-</button>
+                                            <label for="" style="margin: 0px 10px;" class="label">0</label>
+                                            <button class="img-cont" type="button" class="btn btn-danger">
+                                                @Html.ActionLink("+", "AgregarDetalle", "Orden", new { idServicio = item.idServicio, cantidad = 1, idOrden = 1 }, null)
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-            }
+                    }
                 </div>
             </div>
         </div>

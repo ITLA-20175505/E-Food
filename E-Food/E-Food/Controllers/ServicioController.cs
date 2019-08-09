@@ -70,6 +70,7 @@ namespace E_Food.Controllers
             var result = bd.filtroServicioAB(2).ToList<Servicio>();
             listaServicio = result;
 
+
             return View(listaServicio);
         }
         public ActionResult Ensaladas()
