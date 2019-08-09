@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EFoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EFoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Detalle_Orden">
           <Key>
             <PropertyRef Name="idOrden" />
@@ -235,6 +235,9 @@
           <Parameter Name="idTipoAB" Type="int" Mode="In" />
           <Parameter Name="nombre" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="filtroServicio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTipoAB" Type="int" Mode="In" />
+        </Function>
         <Function Name="verDetalleOrden" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="verMesa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="verOrden" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -273,8 +276,7 @@
             <End Role="TipoServicio" EntitySet="TipoServicio" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EFoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -456,37 +458,37 @@
             <Parameter Name="idServicio" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="borrarMesa">
-            <Parameter Name="idMesa" Mode="In" Type="Int32" />
+          <Parameter Name="idMesa" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="borrarOrden">
-            <Parameter Name="idOrden" Mode="In" Type="Int32" />
+          <Parameter Name="idOrden" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="borrarServicio">
-            <Parameter Name="idServicio" Mode="In" Type="Int32" />
+          <Parameter Name="idServicio" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="borrarTipoAB">
-            <Parameter Name="idTipoAB" Mode="In" Type="Int32" />
+          <Parameter Name="idTipoAB" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="borrarTipoServicio">
-            <Parameter Name="idTipoServicio" Mode="In" Type="Int32" />
+          <Parameter Name="idTipoServicio" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="buscarDetalleOrden" EntitySet="Detalle_Orden" ReturnType="Collection(EFoodModel.Detalle_Orden)">
-            <Parameter Name="idOrden" Mode="In" Type="Int32" />
+          <Parameter Name="idOrden" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="buscarMesa" EntitySet="Mesas" ReturnType="Collection(EFoodModel.Mesa)">
-            <Parameter Name="idMesa" Mode="In" Type="Int32" />
+          <Parameter Name="idMesa" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="buscarOrden" EntitySet="Ordens" ReturnType="Collection(EFoodModel.Orden)">
-            <Parameter Name="idOrden" Mode="In" Type="Int32" />
+          <Parameter Name="idOrden" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="buscarServicio" EntitySet="Servicios" ReturnType="Collection(EFoodModel.Servicio)">
-            <Parameter Name="idServicio" Mode="In" Type="Int32" />
+          <Parameter Name="idServicio" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="buscarTipoAB" EntitySet="TipoABs" ReturnType="Collection(EFoodModel.TipoAB)">
-            <Parameter Name="idTipoAB" Mode="In" Type="Int32" />
+          <Parameter Name="idTipoAB" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="buscarTipoServicio" EntitySet="TipoServicios" ReturnType="Collection(EFoodModel.TipoServicio)">
-            <Parameter Name="idTipoServicio" Mode="In" Type="Int32" />
+          <Parameter Name="idTipoServicio" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="crearDetalleOrden">
             <Parameter Name="idOrden" Mode="In" Type="Int32" />
@@ -494,7 +496,7 @@
             <Parameter Name="cantidad" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="crearMesa">
-            <Parameter Name="nombre" Mode="In" Type="String" />
+          <Parameter Name="nombre" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="crearOrden">
             <Parameter Name="idMesa" Mode="In" Type="Int32" />
@@ -511,7 +513,7 @@
             <Parameter Name="imagen" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="crearTipoAB">
-            <Parameter Name="nombre" Mode="In" Type="String" />
+          <Parameter Name="nombre" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="crearTipoServicio">
             <Parameter Name="idTipoAB" Mode="In" Type="Int32" />
@@ -557,6 +559,9 @@
           <FunctionImport Name="verServicio" ReturnType="Collection(EFoodModel.verServicio_Result)" />
           <FunctionImport Name="verTipoAB" ReturnType="Collection(EFoodModel.verTipoAB_Result)" />
           <FunctionImport Name="verTipoServicio" ReturnType="Collection(EFoodModel.verTipoServicio_Result)" />
+          <FunctionImport Name="filtroServicio" EntitySet="Servicios" ReturnType="Collection(EFoodModel.Servicio)">
+            <Parameter Name="idTipoAB" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="buscarDetalleOrden_Result">
           <Property Type="Int32" Name="idOrden" Nullable="false" />
@@ -641,6 +646,17 @@
           <Property Type="String" Name="nombreAB" Nullable="false" MaxLength="25" />
           <Property Type="Int32" Name="idTipoServicio" Nullable="false" />
           <Property Type="String" Name="nombreTS" Nullable="false" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="filtroServicio_Result">
+          <Property Type="Int32" Name="idServicio" Nullable="false" />
+          <Property Type="Int32" Name="idTipoAB" Nullable="false" />
+          <Property Type="String" Name="nombreAB" Nullable="false" MaxLength="25" />
+          <Property Type="Int32" Name="idTipoServicio" Nullable="false" />
+          <Property Type="String" Name="nombreTS" Nullable="false" MaxLength="25" />
+          <Property Type="String" Name="nombreServicio" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="precio" Nullable="true" />
+          <Property Type="Int32" Name="tiempo" Nullable="true" />
+          <Property Type="String" Name="imagen" Nullable="true" MaxLength="Max" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -806,6 +822,8 @@
                 <ScalarProperty Name="nombreTS" ColumnName="nombreTS" />
               </ComplexTypeMapping>
             </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="filtroServicio" FunctionName="EFoodModel.Store.filtroServicio">
           </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>

@@ -149,15 +149,23 @@ go
 create procedure verServicio
 as
 begin
-Select s.idServicio,tab.idTipoAB,tab.nombreAB,ts.idTipoAB,tab.nombreAB,s.nombreServicio,s.precio,s.tiempo,s.imagen from Servicio s inner join
+Select s.idServicio,tab.idTipoAB,tab.nombreAB,ts.idTipoServicio,ts.nombreTS,s.nombreServicio,s.precio,s.tiempo,s.imagen from Servicio s inner join
 TipoAB tab on s.idTipoAB = tab.idTipoAB inner join TipoServicio ts on ts.idTipoServicio = s.idTipoServicio where s.inactive = 0
 end
+go
+create procedure filtroServicio(@idTipoAB int)
+as
+begin
+Select s.idServicio,tab.idTipoAB,tab.nombreAB,ts.idTipoServicio,ts.nombreTS,s.nombreServicio,s.precio,s.tiempo,s.imagen from Servicio s inner join
+TipoAB tab on s.idTipoAB = tab.idTipoAB inner join TipoServicio ts on ts.idTipoServicio = s.idTipoServicio where s.inactive = 0 and s.idTipoAB = @idTipoAB
+end
+
 
 go
 create procedure buscarServicio(@idServicio int)
 as
 begin
-Select s.idServicio,tab.idTipoAB,tab.nombreAB,ts.idTipoAB,tab.nombreAB,s.nombreServicio,s.precio,s.tiempo,s.imagen from Servicio s inner join
+Select s.idServicio,tab.idTipoAB,tab.nombreAB,ts.idTipoServicio,ts.nombreTS,s.nombreServicio,s.precio,s.tiempo,s.imagen from Servicio s inner join
 TipoAB tab on s.idTipoAB = tab.idTipoAB inner join TipoServicio ts on ts.idTipoServicio = s.idTipoServicio
  where s.idServicio = @idServicio and s.inactive = 0
 end 
@@ -305,9 +313,11 @@ end
 go
 
 /* TESTEANDO PROCEDURES */
+exec crearTipoAB 'Entradas'
 exec crearTipoAB 'Bebidas'
 exec crearTipoServicio 1,'Vinos'
-exec crearServicio 1,1,'Vino Tinto','Botella',750,10,'nada'
+exec crearServicio 2,1,'Vino Tinto','Botella',750,10,'nada'
+exec crearServicio 1,1,'Pan','Botella',750,10,'nada'
 exec crearMesa 'Mesa 1'
 exec crearOrden 1,'Freddy Soto','2017-06-20 09:34:00'
 exec crearDetalleOrden 1,1,5
@@ -315,6 +325,7 @@ exec crearDetalleOrden 1,1,5
 exec verTipoAB
 exec verTipoServicio
 exec verServicio
+exec filtroServicio 1
 exec verMesa
 exec verOrden
 exec verDetalleOrden

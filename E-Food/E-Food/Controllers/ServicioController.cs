@@ -15,14 +15,47 @@ namespace E_Food.Controllers
         private List<Servicio> listaServicio;
         private Servicio servicio;
         private EFood bd = new EFood();
-        public ActionResult ListaProductos()
+        public ActionResult Entradas()
+        {
+            listaServicio = new List<Servicio>();
+            using (EFood bd = new EFood())
+            {
+                //Execute stored procedure as a function
+                var result = bd.filtroServicio(1).ToList<Servicio>();
+                listaServicio = result;
+
+                return View(listaServicio);
+
+            }
+        }
+        public ActionResult Bebidas()
         {
             listaServicio = new List<Servicio>();
             listaServicio = bd.Servicios.ToList();
             return View(listaServicio);
 
         }
+        public ActionResult PlatosFuerte()
+        {
+            listaServicio = new List<Servicio>();
+            listaServicio = bd.Servicios.ToList();
+            return View(listaServicio);
 
+        }
+        public ActionResult Postres()
+        {
+            listaServicio = new List<Servicio>();
+            listaServicio = bd.Servicios.ToList();
+            return View(listaServicio);
+
+        }
+        public ActionResult Ensaladas()
+        {
+            listaServicio = new List<Servicio>();
+            listaServicio = bd.Servicios.ToList();
+            return View(listaServicio);
+
+        }
         // GET: Crear Nuevo Servicio
         public ActionResult CrearServicio()
         {
