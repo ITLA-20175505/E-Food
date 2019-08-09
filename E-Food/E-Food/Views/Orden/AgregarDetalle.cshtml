@@ -363,21 +363,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model)
+                    @if (Session["detalleOrden"] != null)
+                    {
+                    foreach (var item in Session["detalleOrden"] as List<E_Food.Models.ViewModels.ViewDetalleOrden>)
+
                     {
                         <tr>
                             <td>
                                 <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
                                      alt="" class="img-menu">
                             </td>
-                            <td> @Html.DisplayFor(modelItem => item.nombreServicio)</td>
-                            <td> @Html.DisplayFor(modelItem => item.tiempo)</td>
-                            <td>@Html.DisplayFor(modelItem => item.precio)</td>
+                            <td> @Html.DisplayFor(modelItem => item.servicio.nombreServicio)</td>
+                            <td> @Html.DisplayFor(modelItem => item.servicio.tiempo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.servicio.precio)</td>
                             <td>
-                                <img src="https://img.icons8.com/plasticine/2x/delete-sign.png" alt=""
-                                     style="width: 50px;">
+                                <a href="@Url.Action("borrarDetalle", "Orden", new { id =1 })">
+                                    <img src="https://img.icons8.com/plasticine/2x/delete-sign.png" alt=""
+                                         style="width: 50px;">
+                                </a>     
+                                 
+
                             </td>
                         </tr>
+                    }
                     }
                         <tr>
                             <td class="col-md-9" style="text-align: right !important;

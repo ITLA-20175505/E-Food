@@ -31,9 +31,9 @@ namespace E_Food.Controllers
 
                     using (EFood bd = new EFood())
                     {
-                        var result = bd.buscarServicio(idServicio);
+                    var result = bd.Servicios.Find(idServicio);
                         servicio = new Servicio();
-                        servicio = result.FirstOrDefault();
+                    servicio = result;
                     }
                     detalle.Add(new ViewDetalleOrden(idOrden, servicio, cantidad));
                     Session["detalleOrden"] = detalle;
@@ -48,10 +48,10 @@ namespace E_Food.Controllers
                     {
                         using (EFood bd = new EFood())
                         {
-                            var result = bd.buscarServicio(idServicio);
-                            servicio = new Servicio();
-                            servicio = result.FirstOrDefault();
-                        }
+                        var result = bd.Servicios.Find(idServicio);
+                        servicio = new Servicio();
+                        servicio = result;
+                    }
                         detalle.Add(new ViewDetalleOrden(idOrden, servicio, cantidad));
                         // SI EXISTE, SOLAMENTE SE SUMA LA CANTIDAD
                     }
@@ -77,7 +77,7 @@ namespace E_Food.Controllers
             {
                 detalle = (List<ViewDetalleOrden>)Session["detalleOrden"];
                 detalle.RemoveAt(getIndex(idServicio));
-                return View("AgregarDetalle");
+                return View();
             }
         }
 
