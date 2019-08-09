@@ -19,6 +19,7 @@ namespace E_Food.Controllers
         {
             return View();
         }
+        
             public ActionResult AgregarDetalle(int idServicio, int cantidad, int idOrden)
             {
 
@@ -59,6 +60,11 @@ namespace E_Food.Controllers
                 }
                 return View();
             }
+        [HttpGet]
+        public ActionResult AgregarDetalle()
+        {
+            return View();
+        }
             private int getIndex(int idServicio)
             {
                 detalle = (List<ViewDetalleOrden>)Session["detalleOrden"];

@@ -154,6 +154,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="filtroServicio" FunctionName="EFoodModel.Store.filtroServicio" />
+    <FunctionImportMapping FunctionImportName="filtroServicioAB" FunctionName="EFoodModel.Store.filtroServicioAB" />
+    <FunctionImportMapping FunctionImportName="filtroServicioTS" FunctionName="EFoodModel.Store.filtroServicioTS" />
   </EntityContainerMapping>
 </Mapping>

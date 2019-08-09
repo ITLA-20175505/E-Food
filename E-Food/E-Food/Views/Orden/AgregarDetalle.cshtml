@@ -375,7 +375,7 @@ int total = 0;
                             total = total + (item.Cantidad * (int)item.servicio.precio);
                             <tr>
                                 <td>
-                                    <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
+                                    <img src="@Html.DisplayFor(modelItem => item.servicio.imagen)"
                                          alt="" class="img-menu">
                                 </td>
                                 <td> @Html.DisplayFor(modelItem => item.servicio.nombreServicio)</td>
