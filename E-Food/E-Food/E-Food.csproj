@@ -228,6 +228,12 @@
     <Compile Include="Models\Detalle_Orden.cs">
       <DependentUpon>BD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\filtroServicioAB_Result.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\filtroServicioTS_Result.cs">
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\filtroServicio_Result.cs">
       <DependentUpon>BD.tt</DependentUpon>
     </Compile>
