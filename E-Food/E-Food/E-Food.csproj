@@ -308,6 +308,9 @@
     <Content Include="Views\Servicio\Carnes.cshtml" />
     <Content Include="Views\Servicio\Postres.cshtml" />
     <Content Include="Views\Servicio\Ensaladas.cshtml" />
+    <Content Include="Views\Servicio\Pastas.cshtml" />
+    <Content Include="Views\Servicio\Aves.cshtml" />
+    <Content Include="Views\Servicio\Mariscos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
