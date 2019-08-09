@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <title>Entrada</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
@@ -39,7 +39,7 @@
             font-size: 1.1em;
             font-weight: 300;
             line-height: 1.7em;
-            color: #999;
+            color: black;
         }
 
         a,
@@ -86,7 +86,7 @@
         #sidebar {
             min-width: 250px;
             max-width: 250px;
-            background: #7386D5;
+            background: #252525;
             color: #fff;
             transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
             transform-origin: bottom left;
@@ -97,10 +97,10 @@
             transform: rotateY(100deg);
         }
 
-        #sidebar .sidebar-header {
-            padding: 20px;
-            background: #6d7fcc;
-        }
+            #sidebar .sidebar-header {
+                padding: 20px;
+                background: #414141;
+            }
 
         #sidebar ul p {
             color: #fff;
@@ -118,11 +118,11 @@
             background: #fff;
         }
 
-        #sidebar ul li.active>a,
-        a[aria-expanded="true"] {
-            color: #fff;
-            background: #6d7fcc;
-        }
+            #sidebar ul li.active > a,
+            a[aria-expanded="true"] {
+                color: #fff;
+                background: #414141;
+            }
 
 
         a[data-toggle="collapse"] {
@@ -140,7 +140,7 @@
         ul ul a {
             font-size: 0.9em !important;
             padding-left: 30px !important;
-            background: #6d7fcc;
+            background: #414141;
         }
 
         ul.CTAs {
@@ -173,12 +173,13 @@
             padding: 20px;
             min-height: 100vh;
             transition: all 0.3s;
+            background: #ebc334;
         }
 
         #sidebarCollapse {
             width: 40px;
             height: 40px;
-            background: #f5f5f5;
+            background: #ebc334;
             cursor: pointer;
         }
 
@@ -296,7 +297,7 @@
             font-size: 1.1em;
             font-weight: 300;
             line-height: 1.7em;
-            color: #999;
+            color: black;
         }
     </style>
 </head>
@@ -307,46 +308,40 @@
         <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+                <img style="width: 250px;" src="~/images/efood.png" alt="Alternate Text" />
             </div>
 
             <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
+                <p>Menu</p>
+                <li>
+                    <a href="#homeSubmenu">Inicio</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#homeSubmenu">Resumen de Orden</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu">Entradas</a>
+                </li>
+                <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                       class="dropdown-toggle">Pages</a>
+                       class="dropdown-toggle">Platos Fuertes</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="#">Pasta</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
+                            <a href="#">Carnes</a>
                         </li>
                         <li>
-                            <a href="#">Page 3</a>
+                            <a href="#">Aves</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Portfolio</a>
+                    <a href="#">Ensalada</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#">Bebida</a>
                 </li>
             </ul>
         </nav>
