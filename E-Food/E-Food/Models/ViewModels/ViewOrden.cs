@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace E_Food.Models.ViewModels
 {
-    public class Orden
+    public class ViewOrden
     {
         [Display(Name = "ID Orden")]
         public int idOrden { get; set; }

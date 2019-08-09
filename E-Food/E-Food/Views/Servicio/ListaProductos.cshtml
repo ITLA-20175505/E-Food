@@ -1,0 +1,83 @@
+﻿@model IEnumerable<E_Food.Models.Servicio>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListaProductos</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreServicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tiempo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.imagen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.inactive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoAB.nombreAB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoServicio.nombreTS)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreServicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tiempo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.imagen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.inactive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoAB.nombreAB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoServicio.nombreTS)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.idServicio }) |
+                @Html.ActionLink("Details", "Details", new { id=item.idServicio }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.idServicio })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

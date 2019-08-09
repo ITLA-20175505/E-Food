@@ -11,11 +11,13 @@ namespace E_Food.Models
 {
     using System;
     
-    public partial class verTipoServicio_Result
+    public partial class verDetalleOrden_Result
     {
-        public int idTipoAB { get; set; }
-        public string nombreAB { get; set; }
-        public int idTipoServicio { get; set; }
-        public string nombreTS { get; set; }
+        public int idOrden { get; set; }
+        public int idServicio { get; set; }
+        public string nombreServicio { get; set; }
+        public Nullable<double> precio { get; set; }
+        public int cantidad { get; set; }
+        public Nullable<double> Total { get; set; }
     }
 }

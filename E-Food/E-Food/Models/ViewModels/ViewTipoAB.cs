@@ -6,7 +6,7 @@ using System.Web;
 
 namespace E_Food.Models.ViewModels
 {
-    public class TipoAB
+    public class ViewTipoAB
     {
         [Display(Name ="ID Tipo AB")]
         public int idTipoAB { get; set; }

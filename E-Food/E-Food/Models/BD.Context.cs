@@ -92,58 +92,112 @@ namespace E_Food.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("borrarTipoServicio", idTipoServicioParameter);
         }
     
-        public virtual ObjectResult<buscarDetalleOrden_Result> buscarDetalleOrden(Nullable<int> idOrden)
+        public virtual ObjectResult<Detalle_Orden> buscarDetalleOrden(Nullable<int> idOrden)
         {
             var idOrdenParameter = idOrden.HasValue ?
                 new ObjectParameter("idOrden", idOrden) :
                 new ObjectParameter("idOrden", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<buscarDetalleOrden_Result>("buscarDetalleOrden", idOrdenParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Detalle_Orden>("buscarDetalleOrden", idOrdenParameter);
         }
     
-        public virtual ObjectResult<buscarMesa_Result> buscarMesa(Nullable<int> idMesa)
+        public virtual ObjectResult<Detalle_Orden> buscarDetalleOrden(Nullable<int> idOrden, MergeOption mergeOption)
+        {
+            var idOrdenParameter = idOrden.HasValue ?
+                new ObjectParameter("idOrden", idOrden) :
+                new ObjectParameter("idOrden", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Detalle_Orden>("buscarDetalleOrden", mergeOption, idOrdenParameter);
+        }
+    
+        public virtual ObjectResult<Mesa> buscarMesa(Nullable<int> idMesa)
         {
             var idMesaParameter = idMesa.HasValue ?
                 new ObjectParameter("idMesa", idMesa) :
                 new ObjectParameter("idMesa", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<buscarMesa_Result>("buscarMesa", idMesaParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Mesa>("buscarMesa", idMesaParameter);
         }
     
-        public virtual ObjectResult<buscarOrden_Result> buscarOrden(Nullable<int> idOrden)
+        public virtual ObjectResult<Mesa> buscarMesa(Nullable<int> idMesa, MergeOption mergeOption)
+        {
+            var idMesaParameter = idMesa.HasValue ?
+                new ObjectParameter("idMesa", idMesa) :
+                new ObjectParameter("idMesa", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Mesa>("buscarMesa", mergeOption, idMesaParameter);
+        }
+    
+        public virtual ObjectResult<Orden> buscarOrden(Nullable<int> idOrden)
         {
             var idOrdenParameter = idOrden.HasValue ?
                 new ObjectParameter("idOrden", idOrden) :
                 new ObjectParameter("idOrden", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<buscarOrden_Result>("buscarOrden", idOrdenParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Orden>("buscarOrden", idOrdenParameter);
         }
     
-        public virtual ObjectResult<buscarServicio_Result> buscarServicio(Nullable<int> idServicio)
+        public virtual ObjectResult<Orden> buscarOrden(Nullable<int> idOrden, MergeOption mergeOption)
+        {
+            var idOrdenParameter = idOrden.HasValue ?
+                new ObjectParameter("idOrden", idOrden) :
+                new ObjectParameter("idOrden", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Orden>("buscarOrden", mergeOption, idOrdenParameter);
+        }
+    
+        public virtual ObjectResult<Servicio> buscarServicio(Nullable<int> idServicio)
         {
             var idServicioParameter = idServicio.HasValue ?
                 new ObjectParameter("idServicio", idServicio) :
                 new ObjectParameter("idServicio", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<buscarServicio_Result>("buscarServicio", idServicioParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Servicio>("buscarServicio", idServicioParameter);
         }
     
-        public virtual ObjectResult<buscarTipoAB_Result> buscarTipoAB(Nullable<int> idTipoAB)
+        public virtual ObjectResult<Servicio> buscarServicio(Nullable<int> idServicio, MergeOption mergeOption)
+        {
+            var idServicioParameter = idServicio.HasValue ?
+                new ObjectParameter("idServicio", idServicio) :
+                new ObjectParameter("idServicio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Servicio>("buscarServicio", mergeOption, idServicioParameter);
+        }
+    
+        public virtual ObjectResult<TipoAB> buscarTipoAB(Nullable<int> idTipoAB)
         {
             var idTipoABParameter = idTipoAB.HasValue ?
                 new ObjectParameter("idTipoAB", idTipoAB) :
                 new ObjectParameter("idTipoAB", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<buscarTipoAB_Result>("buscarTipoAB", idTipoABParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TipoAB>("buscarTipoAB", idTipoABParameter);
         }
     
-        public virtual ObjectResult<buscarTipoServicio_Result> buscarTipoServicio(Nullable<int> idTipoServicio)
+        public virtual ObjectResult<TipoAB> buscarTipoAB(Nullable<int> idTipoAB, MergeOption mergeOption)
+        {
+            var idTipoABParameter = idTipoAB.HasValue ?
+                new ObjectParameter("idTipoAB", idTipoAB) :
+                new ObjectParameter("idTipoAB", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TipoAB>("buscarTipoAB", mergeOption, idTipoABParameter);
+        }
+    
+        public virtual ObjectResult<TipoServicio> buscarTipoServicio(Nullable<int> idTipoServicio)
         {
             var idTipoServicioParameter = idTipoServicio.HasValue ?
                 new ObjectParameter("idTipoServicio", idTipoServicio) :
                 new ObjectParameter("idTipoServicio", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<buscarTipoServicio_Result>("buscarTipoServicio", idTipoServicioParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TipoServicio>("buscarTipoServicio", idTipoServicioParameter);
+        }
+    
+        public virtual ObjectResult<TipoServicio> buscarTipoServicio(Nullable<int> idTipoServicio, MergeOption mergeOption)
+        {
+            var idTipoServicioParameter = idTipoServicio.HasValue ?
+                new ObjectParameter("idTipoServicio", idTipoServicio) :
+                new ObjectParameter("idTipoServicio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TipoServicio>("buscarTipoServicio", mergeOption, idTipoServicioParameter);
         }
     
         public virtual int crearDetalleOrden(Nullable<int> idOrden, Nullable<int> idServicio, Nullable<int> cantidad)
@@ -360,6 +414,11 @@ namespace E_Food.Models
                 new ObjectParameter("nombre", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editarTipoServicio", idTipoServicioParameter, idTipoABParameter, nombreParameter);
+        }
+    
+        public virtual ObjectResult<verDetalleOrden_Result> verDetalleOrden()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<verDetalleOrden_Result>("verDetalleOrden");
         }
     
         public virtual ObjectResult<verMesa_Result> verMesa()

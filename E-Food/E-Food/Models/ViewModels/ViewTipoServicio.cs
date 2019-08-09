@@ -5,7 +5,7 @@ using System.Web;
 
 namespace E_Food.Models.ViewModels
 {
-    public class TipoServicio
+    public class ViewTipoServicio
     {
     }
 }

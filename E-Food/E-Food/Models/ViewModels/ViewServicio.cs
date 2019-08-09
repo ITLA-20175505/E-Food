@@ -6,16 +6,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace E_Food.Models.ViewModels
 {
-    public class Servicio
+    public class ViewServicio
     {
         [Display(Name = "ID Servicio")]
         public int idServicio { get; set; }
         [Required]
         [Display(Name = "Tipo AB")]
-        public TipoAB tipoAB { get; set; }
+        public ViewTipoAB tipoAB { get; set; }
         [Required]
         [Display(Name = "Tipo Servicio")]
-        public TipoServicio tipoServicio{get;set;}
+        public ViewTipoServicio tipoServicio{get;set;}
         [Required]
         [Display(Name = "Nombre")]
         public string nombre;
