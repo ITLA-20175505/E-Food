@@ -77,7 +77,7 @@ namespace E_Food.Controllers
             {
                 detalle = (List<ViewDetalleOrden>)Session["detalleOrden"];
                 detalle.RemoveAt(getIndex(idServicio));
-                return View();
+                return View("AgregarDetalle");
             }
         }
 
