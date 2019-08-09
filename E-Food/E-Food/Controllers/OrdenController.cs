@@ -15,15 +15,12 @@ namespace E_Food.Controllers
             private Servicio servicio;
         private List<Servicio> listaServicio;
         private EFood bd = new EFood();
-        public ActionResult Index()
+        public ActionResult ResumenOrdenes()
         {
             return View();
         }
-        public ActionResult AgregarDetalle()
-        {
-            return View();
-        }
-        [HttpPost]
+     
+   
             public ActionResult AgregarDetalle(int idServicio, int cantidad, int idOrden)
             {
 

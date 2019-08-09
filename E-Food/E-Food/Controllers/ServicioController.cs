@@ -123,11 +123,6 @@ namespace E_Food.Controllers
             }
             return Redirect("~/ListaProductos/");
         }
-        public ActionResult View()
-        {
-            return View();
-        }
-
     }
 
 }

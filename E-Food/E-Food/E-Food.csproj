@@ -308,10 +308,17 @@
     <Content Include="Views\Servicio\Carnes.cshtml" />
     <Content Include="Views\Servicio\Postres.cshtml" />
     <Content Include="Views\Servicio\Ensaladas.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Orden\ResumenOrdenes.cshtml" />
+=======
     <Content Include="Views\Servicio\Pastas.cshtml" />
     <Content Include="Views\Servicio\Aves.cshtml" />
     <Content Include="Views\Servicio\Mariscos.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Servicio\View.cshtml" />
+=======
+>>>>>>> 5ef8046ec8d1a4cbfb2b0254b440a8cd6afc3021
+>>>>>>> b0fb14c15efc96c5c20ce92d31a23f50c232dc9c
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
