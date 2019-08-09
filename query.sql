@@ -1,37 +1,37 @@
-create database EMEnu
-use EMEnu
+create database EFood
+use EFood
 
 create table TipoAB (
-idTipo int identity(1,1),
-Nombre varchar(25) not null,
+idTipoAB int identity(1,1),
+nombreAB varchar(25) not null,
 inactive bit default 0,
-Constraint pk_TipoAB primary key(idTipo))
+Constraint pk_TipoAB primary key(idTipoAB))
 
 create table TipoServicio(
 idTipoServicio int identity(1,1),
 idTipoAB int not null,
-Nombre varchar(25) not null,
+nombreTS varchar(25) not null,
 inactive bit default 0,
 Constraint pk_TipoServicio primary key(idTipoServicio),
-Constraint fk_TipoComida_TipoAB foreign key (idTipoAB) references TipoAB(idTipo))
+Constraint fk_TipoComida_TipoAB foreign key (idTipoAB) references TipoAB(idTipoAB))
 
 create table Servicio(
 idServicio int identity(1,1),
 idTipoAB int not null,
 idTipoServicio int null,
-Nombre varchar(50),
+nombreServicio varchar(50),
 descripcion text,
 precio float,
 tiempo int,
 imagen text,
 inactive bit default 0,
 Constraint pk_Servicio primary key(idServicio),
-Constraint fk_Servicio_TipoAB foreign key (idTipoAB) references TipoAB(idTipo),
+Constraint fk_Servicio_TipoAB foreign key (idTipoAB) references TipoAB(idTipoAB),
 Constraint fk_Servicio_TipoServicio foreign key(idTipoServicio) references TipoServicio(idTipoServicio))
 
 create table Mesa(
 idMesa int identity(1,1),
-Nombre varchar(25),
+nombreMesa varchar(25),
 inactive bit default 0,
 Constraint pk_Mesa primary key(idMesa))
 
@@ -49,7 +49,8 @@ idOrden int not null,
 idServicio int not null,
 cantidad int not null,
 Constraint pk_DetalleOrden primary key(idOrden,idServicio),
-Constraint fk_DetalleOrden_idServicio foreign key (idServicio) references Servicio(idServicio))
+Constraint fk_DetalleOrden_idServicio foreign key (idServicio) references Servicio(idServicio),
+Constraint fk_DetalleOrden_idOrden foreign key(idOrden) references Orden(idOrden))
 
 
 /* Procedimiento para crear,Ver,Buscar, Actualizar y Eliminar Tipo de Alimento & Bebida y Visualizarlo */
@@ -72,7 +73,7 @@ go
  create procedure buscarTipoAB(@idTipoAB int)
 as
 begin
-select * from TipoAB where idTipo = @idTipoAB and inactive = 0
+select * from TipoAB where idTipoAB = @idTipoAB and inactive = 0
 end 
 go
 
@@ -80,7 +81,7 @@ go
 create procedure editarTipoAB(@idTipoAB int,@nombre varchar(25))
 as
 begin
-update TipoAB set Nombre = @nombre where idTipo = @idTipoAB
+update TipoAB set nombreAB = @nombre where idTipoAB = @idTipoAB
 end
 go
 
@@ -88,7 +89,7 @@ go
 create procedure borrarTipoAB(@idTipoAB int)
 as
 begin
-update TipoAB set inactive = 1 where idTipo = @idTipoAB
+update TipoAB set inactive = 1 where idTipoAB = @idTipoAB
 end
 go
 
@@ -104,16 +105,16 @@ go
 create procedure verTipoServicio
 as
 begin
-Select tab.idTipo,tab.Nombre,ts.idTipoServicio,ts.Nombre from TipoServicio ts inner join
-TipoAB tab on ts.idTipoAB = tab.idTipo
+Select tab.idTipoAB,tab.nombreAB,ts.idTipoServicio,ts.nombreTS from TipoServicio ts inner join
+TipoAB tab on ts.idTipoAB = tab.idTipoAB
 end
 go
 
  create procedure buscarTipoServicio(@idTipoServicio int)
 as
 begin
-Select tab.idTipo,tab.Nombre,ts.idTipoServicio,ts.Nombre from TipoServicio ts inner join
-TipoAB tab on ts.idTipoAB = tab.idTipo where idTipoAB = @idTipoServicio and ts.inactive = 0
+Select tab.idTipoAB,tab.nombreAB,ts.idTipoServicio,ts.nombreTS from TipoServicio ts inner join
+TipoAB tab on ts.idTipoAB = tab.idTipoAB where ts.idTipoServicio = @idTipoServicio and ts.inactive = 0
 end 
 go
 
@@ -121,7 +122,7 @@ go
 create procedure editarTipoServicio(@idTipoServicio int,@idTipoAB int,@nombre varchar(25))
 as
 begin
-update TipoServicio set Nombre = @nombre, idTipoAB = @idTipoAB where idTipoServicio = @idTipoServicio
+update TipoServicio set nombreTS = @nombre, idTipoAB = @idTipoAB where idTipoServicio = @idTipoServicio
 end
 go
 
@@ -140,7 +141,7 @@ go
 create procedure crearServicio(@idTipoAB int,@idTipoServicio int,@nombre varchar(50),@descripcion text,@precio float,@tiempo int,@imagen text)
 as
 begin
-insert into Servicio (idTipoAB,idTipoServicio,Nombre,descripcion,precio,tiempo,imagen,inactive)
+insert into Servicio (idTipoAB,idTipoServicio,nombreServicio,descripcion,precio,tiempo,imagen,inactive)
  values(@idTipoAB,@idTipoServicio,@nombre,@descripcion,@precio,@tiempo,@imagen,0);
 end
 
@@ -148,16 +149,16 @@ go
 create procedure verServicio
 as
 begin
-Select s.idServicio,tab.idTipo,tab.Nombre,ts.idTipoAB,tab.Nombre,s.Nombre,s.precio,s.tiempo,s.imagen from Servicio s inner join
-TipoAB tab on s.idTipoAB = tab.idTipo inner join TipoServicio ts on ts.idTipoServicio = s.idTipoServicio where s.inactive = 0
+Select s.idServicio,tab.idTipoAB,tab.nombreAB,ts.idTipoAB,tab.nombreAB,s.nombreServicio,s.precio,s.tiempo,s.imagen from Servicio s inner join
+TipoAB tab on s.idTipoAB = tab.idTipoAB inner join TipoServicio ts on ts.idTipoServicio = s.idTipoServicio where s.inactive = 0
 end
 
 go
 create procedure buscarServicio(@idServicio int)
 as
 begin
-Select s.idServicio,tab.idTipo,tab.Nombre,ts.idTipoAB,tab.Nombre,s.Nombre,s.precio,s.tiempo,s.imagen from Servicio s inner join
-TipoAB tab on s.idTipoAB = tab.idTipo inner join TipoServicio ts on ts.idTipoServicio = s.idTipoServicio
+Select s.idServicio,tab.idTipoAB,tab.nombreAB,ts.idTipoAB,tab.nombreAB,s.nombreServicio,s.precio,s.tiempo,s.imagen from Servicio s inner join
+TipoAB tab on s.idTipoAB = tab.idTipoAB inner join TipoServicio ts on ts.idTipoServicio = s.idTipoServicio
  where s.idServicio = @idServicio and s.inactive = 0
 end 
 go
@@ -167,7 +168,7 @@ create procedure editarServicio(@idServicio int,@idTipoAB int,@idTipoServicio in
 @precio float,@tiempo int,@imagen text)
 as
 begin
-update Servicio set Nombre = @nombre, idTipoAB = @idTipoAB,idTipoServicio = @idTipoServicio,
+update Servicio set nombreServicio = @nombre, idTipoAB = @idTipoAB,idTipoServicio = @idTipoServicio,
 descripcion = @descripcion,precio = @precio,tiempo =@tiempo,imagen =@imagen  where idServicio = @idServicio
 end
 go
@@ -208,7 +209,7 @@ go
 create procedure editarMesa(@idMesa int,@nombre varchar(25))
 as
 begin
-update Mesa set Nombre = @nombre where idMesa = @idMesa
+update Mesa set nombreMesa = @nombre where idMesa = @idMesa
 end
 go
 
@@ -223,7 +224,7 @@ go
 
 /* Procedimiento para crear,editar,buscar,eliminar Orden y Visualizarlas */
 go
-create procedure crearOrden(@idMesa int,@descripcion text,@fecha time)
+create procedure crearOrden(@idMesa int,@descripcion text,@fecha DateTime)
 as
 begin
 insert into Orden (idMesa,Descripcion,Fecha,inactive) values(@idMesa,@descripcion,@fecha,0);
@@ -233,7 +234,7 @@ go
 create procedure verOrden
 as
 begin
-select o.idOrden,m.idMesa,m.Nombre,o.Descripcion,o.fecha from Orden o inner join
+select o.idOrden,m.idMesa,m.nombreMesa,o.Descripcion,o.fecha from Orden o inner join
 Mesa m on o.idMesa = m.idMesa where o.inactive = 0
 end
 
@@ -241,7 +242,7 @@ go
 create procedure buscarOrden(@idOrden int)
 as
 begin
-select o.idOrden,m.idMesa,m.Nombre,o.Descripcion,o.fecha from Orden o inner join
+select o.idOrden,m.idMesa,m.nombreMesa,o.Descripcion,o.fecha from Orden o inner join
 Mesa m on o.idMesa = m.idMesa where o.inactive = 0 and idOrden = @idOrden
 end 
 go
@@ -274,15 +275,15 @@ go
 create procedure verDetalleOrden
 as
 begin
-select do.idOrden,s.idServicio,s.Nombre,s.precio,do.cantidad,(do.cantidad * s.precio) as Total from
-Detalle_Orden do inner join Servicio s on do.idServicio = s.idServicio where do.inactive = 0
+select do.idOrden,s.idServicio,s.nombreServicio,s.precio,do.cantidad,(do.cantidad * s.precio) as Total from
+Detalle_Orden do inner join Servicio s on do.idServicio = s.idServicio
 end
 
 go
 create procedure buscarDetalleOrden(@idOrden int)
 as
 begin
-select do.idOrden,s.idServicio,s.Nombre,s.precio,do.cantidad,(do.cantidad * s.precio) as Total from
+select do.idOrden,s.idServicio,s.nombreServicio,s.precio,do.cantidad,(do.cantidad * s.precio) as Total from
 Detalle_Orden do inner join Servicio s on do.idServicio = s.idServicio where do.idOrden = 0 and do.idOrden = @idOrden
 end 
 go
@@ -309,7 +310,7 @@ exec crearTipoServicio 1,'Vinos'
 exec crearServicio 1,1,'Vino Tinto','Botella',750,10,'nada'
 exec crearMesa 'Mesa 1'
 exec crearOrden 1,'Freddy Soto','2017-06-20 09:34:00'
-exec crearDetalleOrden 1,2,5
+exec crearDetalleOrden 1,1,5
 
 exec verTipoAB
 exec verTipoServicio
