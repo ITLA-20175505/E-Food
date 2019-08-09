@@ -56,7 +56,7 @@ namespace E_Food.Controllers
         {
             //Execute stored procedure as a function
             var result = bd.filtroServicioAB(2).ToList<Servicio>();
-            listaServicio = result;dd
+            listaServicio = result;
 
             return View(listaServicio);
         }
