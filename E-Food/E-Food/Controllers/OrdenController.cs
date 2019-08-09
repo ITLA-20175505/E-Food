@@ -17,9 +17,7 @@ namespace E_Food.Controllers
         private EFood bd = new EFood();
         public ActionResult Index()
         {
-            listaServicio = new List<Servicio>();
-            listaServicio = bd.Servicios.ToList();
-            return View(listaServicio);
+            return View();
         }
             public ActionResult AgregarDetalle(int idServicio, int cantidad, int idOrden)
             {
