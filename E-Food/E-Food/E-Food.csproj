@@ -303,6 +303,11 @@
     <Content Include="Views\Servicio\Entradas.cshtml" />
     <Content Include="Views\Servicio\CrearServicio.cshtml" />
     <Content Include="Views\Orden\editarDetalle.cshtml" />
+    <Content Include="Views\Servicio\Bebidas.cshtml" />
+    <Content Include="Views\Servicio\PlatosFuerte.cshtml" />
+    <Content Include="Views\Servicio\Carnes.cshtml" />
+    <Content Include="Views\Servicio\Postres.cshtml" />
+    <Content Include="Views\Servicio\Ensaladas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
