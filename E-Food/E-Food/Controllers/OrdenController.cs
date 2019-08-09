@@ -19,7 +19,11 @@ namespace E_Food.Controllers
         {
             return View();
         }
-        
+        public ActionResult AgregarDetalle()
+        {
+            return View();
+        }
+        [HttpPost]
             public ActionResult AgregarDetalle(int idServicio, int cantidad, int idOrden)
             {
 
@@ -27,7 +31,6 @@ namespace E_Food.Controllers
                 if (Session["detalleOrden"] == null)
                 {
                     detalle = new List<ViewDetalleOrden>();
-
                     using (EFood bd = new EFood())
                     {
                     var result = bd.Servicios.Find(idServicio);
@@ -58,13 +61,9 @@ namespace E_Food.Controllers
                         detalle[existe].Cantidad = cantidad++;
                     Session["detalleOrden"] = detalle;
                 }
-                return View();
-            }
-        [HttpGet]
-        public ActionResult AgregarDetalle()
-        {
-            return View();
+              return Redirect(Request.UrlReferrer.ToString());
         }
+        
             private int getIndex(int idServicio)
             {
                 detalle = (List<ViewDetalleOrden>)Session["detalleOrden"];

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<E_Food.Models.Servicio>
+﻿@model IEnumerable<E_Food.Models.ViewModels.ViewDetalleOrden>
 @{
     Layout = null;
 }
@@ -312,31 +312,31 @@
                     <a href="#homeSubmenu">Inicio</a>
                 </li>
                 <li>
-                    <a href="#homeSubmenu">Resumen de Orden</a>
+                    <a href="#homeSubmenu">@Html.ActionLink("Resumen de Orden","AgregarDetalle")</a>
                 </li>
                 <li>
-                    <a href="#homeSubmenu">Entradas</a>
+                    <a href="#homeSubmenu">@Html.ActionLink("Entradas", "Entradas","Servicio")</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
                        class="dropdown-toggle">Platos Fuertes</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Pasta</a>
+                            <a href="#">@Html.ActionLink("Pastas", "Pastas", "Servicio")</a>
                         </li>
                         <li>
-                            <a href="#">Carnes</a>
+                            <a href="#">@Html.ActionLink("Carnes", "Carnes", "Servicio")</a>
                         </li>
                         <li>
-                            <a href="#">Aves</a>
+                            <a href="#">@Html.ActionLink("Aves", "Aves", "Servicio")</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Ensalada</a>
+                    <a href="#">@Html.ActionLink("Ensaladas", "Ensaladas", "Servicio")</a>
                 </li>
                 <li>
-                    <a href="#">Bebida</a>
+                    <a href="#">@Html.ActionLink("Bebidas", "Bebidas", "Servicio")</a>
                 </li>
             </ul>
         </nav>
@@ -356,9 +356,10 @@
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col"></th>
-                        <th scope="col">@Html.DisplayNameFor(model => model.nombreServicio)</th>
-                        <th scope="col"> @Html.DisplayNameFor(model => model.tiempo)</th>
-                        <th scope="col"> @Html.DisplayNameFor(model => model.precio)</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col"> Cantidad</th>
+                        <th scope="col"> Precio</th>
+                        <th scope="col"> Subtotal</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -382,6 +383,7 @@ int total = 0;
                                 <td> @Html.DisplayFor(modelItem => item.Cantidad)</td>
                                 <td>@Html.DisplayFor(modelItem => item.servicio.precio)</td>
                                 <td>@(item.servicio.precio * item.Cantidad)</td>
+
                                 <td>
                                     @Html.ActionLink("Eliminar", "borrarDetalle", "Orden", new { idServicio = item.servicio.idServicio }, null)
                                 </td>
