@@ -463,5 +463,41 @@ namespace E_Food.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Servicio>("filtroServicio", mergeOption, idTipoABParameter);
         }
+    
+        public virtual ObjectResult<Servicio> filtroServicioAB(Nullable<int> idTipoAB)
+        {
+            var idTipoABParameter = idTipoAB.HasValue ?
+                new ObjectParameter("idTipoAB", idTipoAB) :
+                new ObjectParameter("idTipoAB", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Servicio>("filtroServicioAB", idTipoABParameter);
+        }
+    
+        public virtual ObjectResult<Servicio> filtroServicioAB(Nullable<int> idTipoAB, MergeOption mergeOption)
+        {
+            var idTipoABParameter = idTipoAB.HasValue ?
+                new ObjectParameter("idTipoAB", idTipoAB) :
+                new ObjectParameter("idTipoAB", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Servicio>("filtroServicioAB", mergeOption, idTipoABParameter);
+        }
+    
+        public virtual ObjectResult<Servicio> filtroServicioTS(Nullable<int> idTipoServicio)
+        {
+            var idTipoServicioParameter = idTipoServicio.HasValue ?
+                new ObjectParameter("idTipoServicio", idTipoServicio) :
+                new ObjectParameter("idTipoServicio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Servicio>("filtroServicioTS", idTipoServicioParameter);
+        }
+    
+        public virtual ObjectResult<Servicio> filtroServicioTS(Nullable<int> idTipoServicio, MergeOption mergeOption)
+        {
+            var idTipoServicioParameter = idTipoServicio.HasValue ?
+                new ObjectParameter("idTipoServicio", idTipoServicio) :
+                new ObjectParameter("idTipoServicio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Servicio>("filtroServicioTS", mergeOption, idTipoServicioParameter);
+        }
     }
 }

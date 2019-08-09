@@ -21,7 +21,7 @@ namespace E_Food.Controllers
             using (EFood bd = new EFood())
             {
                 //Execute stored procedure as a function
-                var result = bd.filtroServicio(2).ToList<Servicio>();
+                var result = bd.filtroServicioAB(2).ToList<Servicio>();
                 listaServicio = result;
 
                 return View(listaServicio);
@@ -30,24 +30,35 @@ namespace E_Food.Controllers
         }
         public ActionResult Bebidas()
         {
-            listaServicio = new List<Servicio>();
-            listaServicio = bd.Servicios.ToList();
-            return View(listaServicio);
+            //Execute stored procedure as a function
+            var result = bd.filtroServicioAB(2).ToList<Servicio>();
+            listaServicio = result;
 
+            return View(listaServicio);
         }
         public ActionResult PlatosFuerte()
         {
-            listaServicio = new List<Servicio>();
-            listaServicio = bd.Servicios.ToList();
-            return View(listaServicio);
+            //Execute stored procedure as a function
+            var result = bd.filtroServicioAB(2).ToList<Servicio>();
+            listaServicio = result;
 
+            return View(listaServicio);
+        }
+        public ActionResult Carnes()
+        {
+            //Execute stored procedure as a function
+            var result = bd.filtroServicioAB(2).ToList<Servicio>();
+            listaServicio = result;
+
+            return View(listaServicio);
         }
         public ActionResult Postres()
         {
-            listaServicio = new List<Servicio>();
-            listaServicio = bd.Servicios.ToList();
-            return View(listaServicio);
+            //Execute stored procedure as a function
+            var result = bd.filtroServicioAB(2).ToList<Servicio>();
+            listaServicio = result;
 
+            return View(listaServicio);
         }
         public ActionResult Ensaladas()
         {
