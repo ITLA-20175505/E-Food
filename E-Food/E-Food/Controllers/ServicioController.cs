@@ -21,7 +21,7 @@ namespace E_Food.Controllers
             using (EFood bd = new EFood())
             {
                 //Execute stored procedure as a function
-                var result = bd.filtroServicio(1).ToList<Servicio>();
+                var result = bd.filtroServicio(2).ToList<Servicio>();
                 listaServicio = result;
 
                 return View(listaServicio);

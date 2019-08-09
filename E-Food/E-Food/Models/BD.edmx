@@ -560,7 +560,7 @@
           <FunctionImport Name="verTipoAB" ReturnType="Collection(EFoodModel.verTipoAB_Result)" />
           <FunctionImport Name="verTipoServicio" ReturnType="Collection(EFoodModel.verTipoServicio_Result)" />
           <FunctionImport Name="filtroServicio" EntitySet="Servicios" ReturnType="Collection(EFoodModel.Servicio)">
-            <Parameter Name="idTipoAB" Mode="In" Type="Int32" />
+          <Parameter Name="idTipoAB" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="buscarDetalleOrden_Result">
