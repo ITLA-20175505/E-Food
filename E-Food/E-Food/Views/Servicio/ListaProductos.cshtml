@@ -370,13 +370,13 @@
                     <div class="col-lg-4 carta">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h2>Nombre</h2>
+                                <h2>@Html.DisplayNameFor(model => model.nombreServicio)</h2>
                             </div>
                             <div class="panel-body">
                                 <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
                                      alt="" class="img-thumbnail">
-                                <p>Descripcion</p>
-                                <p>Precio</p>
+                                <p>@Html.DisplayNameFor(model => model.descripcion)</p>
+                                <p>@Html.DisplayNameFor(model => model.precio))</p>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <img src="https://images.emojiterra.com/mozilla/512px/2796.png" alt=""
@@ -389,116 +389,31 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 carta">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2>Nombre</h2>
-                            </div>
-                            <div class="panel-body">
-                                <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
-                                     alt="" class="img-thumbnail">
-                                <p>Descripcion</p>
-                                <p>Precio</p>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <img src="https://images.emojiterra.com/mozilla/512px/2796.png" alt=""
-                                             class="img-cont">
-                                        <label for="" style="margin: 0px 10px;" class="label">0</label>
-                                        <img src="https://images.emojiterra.com/mozilla/512px/2795.png" alt=""
-                                             class="img-cont">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 carta">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h2>@Html.DisplayFor(modelItem => item.nombreServicio)</h2>
+                                </div>
+                                <div class="panel-body">
+                                    <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
+                                         alt="" class="img-thumbnail">
+                                    <p>@Html.DisplayFor(modelItem => item.descripcion)</p>
+                                    <p>@Html.DisplayFor(modelItem => item.precio)</p>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="https://images.emojiterra.com/mozilla/512px/2796.png" alt=""
+                                                 class="img-cont">
+                                            <label for="" style="margin: 0px 10px;" class="label">0</label>
+                                            <img src="https://images.emojiterra.com/mozilla/512px/2795.png" alt=""
+                                                 class="img-cont">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 carta">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2>Nombre</h2>
-                            </div>
-                            <div class="panel-body">
-                                <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
-                                     alt="" class="img-thumbnail">
-                                <p>Descripcion</p>
-                                <p>Precio</p>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <img src="https://images.emojiterra.com/mozilla/512px/2796.png" alt=""
-                                             class="img-cont">
-                                        <label for="" style="margin: 0px 10px;" class="label">0</label>
-                                        <img src="https://images.emojiterra.com/mozilla/512px/2795.png" alt=""
-                                             class="img-cont">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 carta">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2>Nombre</h2>
-                            </div>
-                            <div class="panel-body">
-                                <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
-                                     alt="" class="img-thumbnail">
-                                <p>Descripcion</p>
-                                <p>Precio</p>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <img src="https://images.emojiterra.com/mozilla/512px/2796.png" alt=""
-                                             class="img-cont">
-                                        <label for="" style="margin: 0px 10px;" class="label">0</label>
-                                        <img src="https://images.emojiterra.com/mozilla/512px/2795.png" alt=""
-                                             class="img-cont">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 carta">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2>Nombre</h2>
-                            </div>
-                            <div class="panel-body">
-                                <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
-                                     alt="" class="img-thumbnail">
-                                <p>Descripcion</p>
-                                <p>Precio</p>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <img src="https://images.emojiterra.com/mozilla/512px/2796.png" alt=""
-                                             class="img-cont">
-                                        <label for="" style="margin: 0px 10px;" class="label">0</label>
-                                        <img src="https://images.emojiterra.com/mozilla/512px/2795.png" alt=""
-                                             class="img-cont">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 carta">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h2>Nombre</h2>
-                            </div>
-                            <div class="panel-body">
-                                <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg"
-                                     alt="" class="img-thumbnail">
-                                <p>Descripcion</p>
-                                <p>Precio</p>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <img src="https://images.emojiterra.com/mozilla/512px/2796.png" alt=""
-                                             class="img-cont">
-                                        <label for="" style="margin: 0px 10px;" class="label">0</label>
-                                        <img src="https://images.emojiterra.com/mozilla/512px/2795.png" alt=""
-                                             class="img-cont">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

@@ -11,6 +11,7 @@ namespace E_Food.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Servicio
     {
@@ -23,9 +24,13 @@ namespace E_Food.Models
         public int idServicio { get; set; }
         public int idTipoAB { get; set; }
         public Nullable<int> idTipoServicio { get; set; }
+        [Display(Name ="Nombre")]
         public string nombreServicio { get; set; }
+        [Display(Name ="Descripcion")]
         public string descripcion { get; set; }
+        [Display(Name ="Costo")]
         public Nullable<double> precio { get; set; }
+        [Display(Name ="Tiempo de Preparacion")]
         public Nullable<int> tiempo { get; set; }
         public string imagen { get; set; }
         public Nullable<bool> inactive { get; set; }
