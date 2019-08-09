@@ -318,7 +318,7 @@
                 </li>
                 <li>
                     <a href="#homeSubmenu">
-                        @Html.ActionLink("Resumen de Orden","AgregarDetalle","Orden",null,null)
+                        @Html.ActionLink("Resumen de Orden","AgregarDetalle","Orden")
                  
                 </a>
             </li>
@@ -384,8 +384,8 @@
                                         <div class="col-md-12">
                                             <button class="img-cont" type="button" class="btn btn-danger">-</button>
                                             <label for="" style="margin: 0px 10px;" class="label">0</label>
-                                            <button class="img-cont" type="button" class="btn btn-danger">
-                                                @Html.ActionLink("+", "AgregarDetalle","Orden", new { idServicio = item.idServicio,cantidad =1,idOrden = 1 },null)
+                                            <button type="submit"class="img-cont" type="button" class="btn btn-danger">
+                                                 +
                                             </button>
                                         </div>
                                     </div>

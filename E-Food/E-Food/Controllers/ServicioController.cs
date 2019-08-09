@@ -63,14 +63,13 @@ namespace E_Food.Controllers
         }
         public ActionResult Postres()
         {
-<<<<<<< HEAD
+
             listadoFiltro(1);
-=======
+
             //Execute stored procedure as a function
             var result = bd.filtroServicioAB(2).ToList<Servicio>();
             listaServicio = result;
 
->>>>>>> cf95c14bc12020e71056341a091fc5e0c2e257c6
             return View(listaServicio);
         }
         public ActionResult Ensaladas()
@@ -98,7 +97,7 @@ namespace E_Food.Controllers
                         bd.SaveChanges();
                     }
                 }
-                return Redirect("~/ListaProductos/");
+                return Redirect(Request.UrlReferrer.ToString());
             }
             catch (Exception e)
             {
