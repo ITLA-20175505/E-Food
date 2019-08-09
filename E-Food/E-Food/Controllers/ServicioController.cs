@@ -15,57 +15,68 @@ namespace E_Food.Controllers
         private List<Servicio> listaServicio;
         private Servicio servicio;
         private EFood bd = new EFood();
-        public ActionResult Entradas()
+        private void listadoFiltro(int idTipoAB)
         {
             listaServicio = new List<Servicio>();
             using (EFood bd = new EFood())
             {
                 //Execute stored procedure as a function
-                var result = bd.filtroServicioAB(2).ToList<Servicio>();
+                var result = bd.filtroServicioAB(idTipoAB).ToList<Servicio>();
                 listaServicio = result;
-
-                return View(listaServicio);
-
             }
         }
+            public ActionResult Entradas()
+        {
+            listadoFiltro(1);
+                return View(listaServicio);
+            }
         public ActionResult Bebidas()
         {
-            //Execute stored procedure as a function
-            var result = bd.filtroServicioAB(2).ToList<Servicio>();
-            listaServicio = result;
 
+            listadoFiltro(1);
             return View(listaServicio);
         }
         public ActionResult PlatosFuerte()
         {
-            //Execute stored procedure as a function
-            var result = bd.filtroServicioAB(2).ToList<Servicio>();
-            listaServicio = result;
-
+            listadoFiltro(1);
             return View(listaServicio);
         }
         public ActionResult Carnes()
         {
-            //Execute stored procedure as a function
-            var result = bd.filtroServicioAB(2).ToList<Servicio>();
-            listaServicio = result;
-
+            listadoFiltro(1);
+            return View(listaServicio);
+        }
+        public ActionResult Pastas()
+        {
+            listadoFiltro(1);
+            return View(listaServicio);
+        }
+        public ActionResult Aves()
+        {
+            listadoFiltro(1);
+            return View(listaServicio);
+        }
+        public ActionResult Mariscos()
+        {
+            listadoFiltro(1);
             return View(listaServicio);
         }
         public ActionResult Postres()
         {
+<<<<<<< HEAD
+            listadoFiltro(1);
+=======
             //Execute stored procedure as a function
             var result = bd.filtroServicioAB(2).ToList<Servicio>();
             listaServicio = result;
 
+>>>>>>> cf95c14bc12020e71056341a091fc5e0c2e257c6
             return View(listaServicio);
         }
         public ActionResult Ensaladas()
         {
-            listaServicio = new List<Servicio>();
-            listaServicio = bd.Servicios.ToList();
+            listadoFiltro(1);
             return View(listaServicio);
-
         }
         // GET: Crear Nuevo Servicio
         public ActionResult CrearServicio()

@@ -317,35 +317,38 @@
                     <a href="#homeSubmenu">Inicio</a>
                 </li>
                 <li>
-                    <a href="#homeSubmenu">@Html.ActionLink("Resumen de Orden" +
-                                          "" +
-                                          "" +
-                                          "", "AgregarDetalle", "Orden")</a>
-                </li>
-                <li>
-                    <a href="#homeSubmenu">Entradas</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                       class="dropdown-toggle">Platos Fuertes</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Pasta</a>
-                        </li>
-                        <li>
-                            <a href="#">Carnes</a>
-                        </li>
-                        <li>
-                            <a href="#">Aves</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Ensalada</a>
-                </li>
-                <li>
-                    <a href="#">Bebida</a>
-                </li>
+                    <a href="#homeSubmenu">
+                        @Html.ActionLink("Resumen de Orden","AgregarDetalle","Orden",null,null)
+                 
+                </a>
+            </li>
+            <li>
+                <a href="#homeSubmenu">Entradas</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                   class="dropdown-toggle">Platos Fuertes</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">@Html.ActionLink("Pastas", "Pastas")</a>
+                    </li>
+                    <li>
+                        <a href="#">@Html.ActionLink("Carnes", "Carnes")</a>
+                    </li>
+                    <li>
+                        <a href="#">@Html.ActionLink("Aves", "Aves")</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">@Html.ActionLink("Ensaladas", "Ensaladas")</a>
+            </li>
+            <li>
+                <a href="#">@Html.ActionLink("Bebidas", "Bebidas")</a>
+            </li>
+            <li>
+                <a href="#">@Html.ActionLink("Postres", "Postres")</a>
+            </li>
             </ul>
         </nav>
 
@@ -373,7 +376,7 @@
                                     <h2>@Html.DisplayFor(modelItem => item.nombreServicio)</h2>
                                 </div>
                                 <div class="panel-body">
-                                    <img src=@Html.DisplayFor(modelItem => item.imagen)
+                                    <img src="@Html.DisplayFor(modelItem => item.imagen)"
                                          alt="" class="img-thumbnail">
                                     <p>@Html.DisplayFor(modelItem => item.idServicio)</p>
                                     <p>@Html.DisplayFor(modelItem => item.precio)</p>
@@ -389,6 +392,7 @@
                                 </div>
                             </div>
                         </div>
+    
                     }
                 </div>
             </div>
